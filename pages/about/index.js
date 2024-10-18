@@ -28,18 +28,22 @@ const aboutData = [
       {
         title: "Web Development",
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          <FaHtml5 key={"1"} />,
+          <FaCss3 key={"1"} />,
+          <FaJs key={"1"} />,
+          <FaReact key={"1"} />,
+          <SiNextdotjs key={"1"} />,
+          <SiFramer key={"1"} />,
+          <FaWordpress key={"1"} />,
         ],
       },
       {
         title: "UI/UX Design",
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [
+          <FaFigma key={"2"} />,
+          <SiAdobexd key={"2"} />,
+          <SiAdobephotoshop key={"2"} />,
+        ],
       },
     ],
   },
@@ -95,7 +99,7 @@ const aboutData = [
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="h-full py-32 text-center bg-primary/30 xl:text-left">
       <Circles />
       <motion.div
         className="hidden xl:flex absolute bottom-0 -left-[224px] h-[420px]"
@@ -106,7 +110,7 @@ const About = () => {
       >
         <Avatar />
       </motion.div>
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <div className="container flex flex-col items-center h-full mx-auto xl:flex-row gap-x-6">
         <div className="flex-1 flex flex-col h-[380px]">
           <motion.h2
             className="h2"
@@ -125,22 +129,22 @@ const About = () => {
             animate="show"
             exit="hidden"
           >
-            10 years ago, I began freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collaborated on digital products for business and consumer use.
+            As a Frontend Developer with a year of experience, I specialize in
+            React, Next.js, React Native, and NestJS, creating user-friendly and
+            animated websites to deliver engaging digital experiences.
           </motion.p>
           <motion.div
             variants={fadeIn("right", 0.7)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden md:flex md:max-w-xl xl:max-x-none mx-auto xl:mx-0 mb-8"
+            className="hidden mx-auto mb-8 md:flex md:max-w-xl xl:max-x-none xl:mx-0"
           >
             <div className="flex flex-1 xl:gap-x-4">
-              <CustomCountUp end={10}>Years of experience</CustomCountUp>
-              <CustomCountUp end={250}>Satisfied Clients</CustomCountUp>
-              <CustomCountUp end={650}>Finished Project</CustomCountUp>
-              <CustomCountUp end={6}>Winning Awwards</CustomCountUp>
+              <CustomCountUp end={1}>Years of experience</CustomCountUp>
+              <CustomCountUp end={5}>Satisfied Clients</CustomCountUp>
+              <CustomCountUp end={10}>Finished Project</CustomCountUp>
+              <CustomCountUp end={1}>Winning Awwards</CustomCountUp>
             </div>
           </motion.div>
         </div>
@@ -151,7 +155,7 @@ const About = () => {
           exit="hidden"
           className="flex flex-col w-full xl:max-w-[48%] h-[380px]"
         >
-          <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
+          <div className="flex mx-auto mb-4 gap-x-4 xl:gap-x-8 xl:mx-0">
             {aboutData.map((item, i) => (
               <div
                 key={i}
@@ -165,16 +169,11 @@ const About = () => {
               </div>
             ))}
           </div>
-          <div
-            className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 
-          items-center xl:items-start"
-          >
+          <div className="flex flex-col items-center py-2 xl:py-6 gap-y-2 xl:gap-y-4 xl:items-start">
             {aboutData[index].info.map((item, itemIndex) => (
               <div
                 key={itemIndex}
-                className="flex-1 flex flex-col md:flex-row
-              max-w-max gap-x-2 items-center text-white/60
-              "
+                className="flex flex-col justify-center flex-1 max-w-max gap-x-2 text-white/60"
               >
                 <div className="font-light mb-2 md:mb-0 text-[12px] md:text-[14.1px]">
                   {item.title}
@@ -183,7 +182,7 @@ const About = () => {
                   -
                 </div>
                 <div className="text-[12px] md:text-[14.1px]">{item.stage}</div>
-                <div className="flex gap-x-4 ">
+                <div className="flex flex-wrap gap-x-4 ">
                   {item.icons?.map((icon, i) => (
                     <div key={i} className="text-2xl text-white">
                       {icon}

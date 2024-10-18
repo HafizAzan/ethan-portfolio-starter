@@ -7,9 +7,9 @@ import ParticlesContainer from "../components/ParticlesContainer";
 
 const Home = () => {
   return (
-    <section className="bg-primary/60 h-full">
+    <section className="h-full bg-primary/60">
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-        <div className="text-center flex flex-col justify-center xl-pt-40 xl:text-left h-full container mx-auto pt-20">
+        <div className="container flex flex-col justify-center h-full pt-20 mx-auto text-center xl-pt-40 xl:text-left">
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"
@@ -27,10 +27,10 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-14 text-[14px]"
           >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-            odio beatae hic delectus quam iste ipsa rem ratione commodi dolorem.
+            As a developer, I turn ideas into digital experiences, building
+            <br /> apps & Website that merge creativity and technology
           </motion.p>
-          <div className="flex justify-center relative xl:hidden">
+          <div className="relative flex justify-center xl:hidden">
             <ProjectsBtn />
           </div>
           <motion.div
@@ -46,12 +46,7 @@ const Home = () => {
       </div>
 
       <div className="w-[800px] h-full absolute bottom-0 right-0">
-        <div
-          className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right
-           xl:bg-no-repeat w-full h-full absolute xl:mix-blend-color-dodge 
-        translate-z-6
-        "
-        ></div>
+        <div className="absolute w-full h-full bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat xl:mix-blend-color-dodge translate-z-6 "></div>
 
         <ParticlesContainer />
 

@@ -36,8 +36,8 @@ const Nav = () => {
     >
       <div
         className="flex w-full xl:flex-col items-center justify-between 
-      xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px]
-       bg-white/10 xl:h-max py-8 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full
+      xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[50px] xl:py-7
+       bg-white/10 xl:h-max backdrop-blur-sm text-[1.3rem] xl:text-xl xl:rounded-full
 "
       >
         {navData?.map((link, index) => {
@@ -49,7 +49,7 @@ const Nav = () => {
               href={link.path}
               key={index}
             >
-              <div className="absolute pr-12 right-0 hidden xl:group-hover:flex">
+              <div className="absolute right-0 hidden pr-12 xl:group-hover:flex">
                 <div className="bg-white relative flex text-primary items-start p-[5px] rounded-[3px]">
                   <div className="text-[12px] leading-none font-semibold">
                     {link.name}
